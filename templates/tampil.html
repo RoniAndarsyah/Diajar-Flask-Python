@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% block title %} tampil data {% endblock %}
+{% block conten %}
+<div class="container">
+    <div class="col-md-12">
+        <table class="table table-hover">
+
+            <h3>Tabel Mahasiswa</h3>
+            <thead>
+                <th>NIM</th>
+                <th>Nama</th>
+                <th>Aksi</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    {% for row in mahasiswa %}
+                    <tr>
+                        <td>{{ row.1 }}</td>
+                        <td>{{ row.2 }}</td>
+                       <td>
+                        <a href="/ubah/{{ row.0 }}"  class="btn btn-warning btn-xs">Edit</a>
+                        <a href="/hapus/{{ row.0 }}" class="btn btn-danger btn-xs" onclick="return confirm('Yakin ingin hapus?')">Hapus</a>
+                       </td>
+                    </tr>
+                    
+                    {% endfor %}
+        
+            </tbody>
+            
+                    </table>
+    </div>
+
+</div>
+
+{% endblock %}
+

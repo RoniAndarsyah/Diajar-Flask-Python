@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block title %}Edit Data{% endblock %}
+{% block edit %}
+<div class="container"><BR>
+    <div class="col-md-5">
+        <form action="{{ url_for('update') }}" method="POST">
+            <h2>Edit Data </h2>
+            {% for row in mahasiswa %}
+            <input type="hidden" name="id" value="{{ row.0 }}">
+            <div >
+                <label for="">NIM</label>
+                <input type="text" class="form-control" name="nim" value="{{ row.1 }}" >
+
+            </div> 
+            <label for="">Nama</label>
+            <div>
+                <input type="text" class="form-control" name="nama" value="{{ row.2 }}" >
+            </div><br>
+          {% endfor %}
+            <button class="btn btn-primary">Update</button>
+
+        </form>
+    </div>
+</div>
+{% endblock %}

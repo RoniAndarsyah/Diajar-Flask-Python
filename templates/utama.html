@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block title %}Form tambah data{% endblock %}
+{% block tambah %}
+    <div class="container"><BR>
+        <div class="col-md-5">
+            <form action="{{ url_for('save') }}" method="POST">
+                <h2>Data Mahasiswa</h2>
+                <div >
+                    <label for="">NIM</label>
+                    <input type="text" class="form-control" name="nim">
+
+                </div>
+                <label for="">Nama</label>
+                <div>
+                    <input type="text" class="form-control" name="nama">
+                </div><br>
+                <button class="btn btn-primary">Simpan</button>
+
+            </form>
+        </div>
+    </div>
+{% endblock %}
